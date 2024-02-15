@@ -9,7 +9,13 @@ use std::io::Cursor;
 #[derive(Debug, Clone, Copy, AsExpression, FromSqlRow, PartialEq)]
 #[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
 #[diesel(sql_type = Point)]
-pub struct PointXy(f64, f64);
+pub struct PointXy(pub f64, pub f64);
+
+impl PointXy {
+    pub fn new(x: f64, y: f64) -> Self {
+        PointXy(x, y)
+    }
+}
 
 impl ToSql<Point, Pg> for PointXy {
     fn to_sql<'b>(&'b self, out: &mut Output<'b, '_, Pg>) -> serialize::Result {
