@@ -9,7 +9,7 @@ license = "MIT OR Apache-2.0"
 repository = "https://github.com/fernandomarca/diesel-point"
 documentation = "https://docs.rs/diesel-point"
 description = "Diesel support for Point types in Postgres"
-keywords = ["database", "sql", "orm", "diesel", "postgres", "point"]
+keywords = ["sql", "orm", "diesel", "postgres", "point"]
 categories = ["database"]
 
 [dependencies]
