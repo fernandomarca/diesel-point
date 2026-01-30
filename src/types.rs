@@ -8,6 +8,7 @@ use std::io::Cursor;
 
 #[derive(Debug, Clone, Copy, AsExpression, FromSqlRow, PartialEq)]
 #[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
+#[cfg_attr(feature = "utoipa", derive(utoipa::ToSchema))]
 #[diesel(sql_type = Point)]
 pub struct PointXy(pub f64, pub f64);
 
